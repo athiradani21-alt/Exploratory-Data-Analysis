@@ -1,6 +1,7 @@
 # Exploratory-Data-Analysis 
 
-This repository contains an exploratory data analysis (EDA) project—completed as part of a **Module End Evaluation**—focusing on a comprehensive healthcare dataset comprising medical examinations, hospitalization details, and customer profiles. 
+This repository contains an exploratory data analysis (EDA) project—completed as part of a **Module End Evaluation**—focusing on a comprehensive healthcare dataset comprising medical examinations, hospitalization details, and customer profiles. Along with this attaching the data set that have been provided.
+
 
 ### Dataset Overview
 This dataset consist of :
