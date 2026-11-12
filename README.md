@@ -6,9 +6,11 @@ This repository contains an exploratory data analysis (EDA) project—completed 
 ### Dataset Overview
 This dataset consist of :
 
-  * *Customer Information & Metrics:* **`Customer ID`**, **`First Name`**, **`Age`**, **`Date of Birth`**, **`State ID`**
-     * *Health & Clinical Indicators:* **`BMI`**, **`HBA1C`**, **`Heart Issues`**, **`Any Transplants`**, **`Cancer history`**, **`NumberOfMajorSurgeries`**, **`smoker`**, **`Weight Status`**, **`Diabetes Status`**
-     * *Hospital & Financial Details:* **`charges`**, **`Hospital tier`**, **`City tier`**
+   *Customer Information & Metrics:* **`Customer ID`**, **`First Name`**, **`Age`**, **`Date of Birth`**, **`State ID`**
+   
+   *Health & Clinical Indicators:* **`BMI`**, **`HBA1C`**, **`Heart Issues`**, **`Any Transplants`**, **`Cancer history`**, **`NumberOfMajorSurgeries`**, **`smoker`**, **`Weight Status`**, **`Diabetes Status`**
+   
+   *Hospital & Financial Details:* **`charges`**, **`Hospital tier`**, **`City tier`**
 
 
 ## Healthcare Data Analysis and Insights::
@@ -28,14 +30,15 @@ The healthcare industry generates vast amounts of data daily, providing valuable
 
 Q2.    * Month: Replaced all missing entries in the `month` column with the default value **"Sep"**.
        
-        * Year: Filled missing values in the `year` column by calculating the overall average of the existing valid year entries and rounding the  result to the nearest integer.
-        * Implemented using  IF and ISBLANK Function.
+       * Year: Filled missing values in the `year` column by calculating the overall average .
+        
+       * Implemented using  IF and ISBLANK Function.
 
 Q3. *Identified the most frequently occurring values (mode) for the **`smoker`**, **`Hospital tier`**, and **`City tier`** columns.
-   * Imputed missing entries within these columns with their respective modes to preserve the dataset's underlying distributional characteristics.
+    * Imputed missing entries within these columns with their respective modes to preserve the dataset's underlying distributional characteristics.
 
 Q4.   * Inspected the `State ID` column for missing or null records.
-   * Filled any unassigned or missing state values with **"Unknown"** using IF and ISBLANK Function.
+      * Filled any unassigned or missing state values with **"Unknown"** using IF and ISBLANK Function.
 
 
 
@@ -51,33 +54,33 @@ Q2. **Convert "NumberOfMajorSurgeries" (`Medical Examinations` Table)**
    *  Converted the text-formatted `NumberOfMajorSurgeries` column into proper numerical using  (0).
    * Done using Find and Replace Function.
 
-3. **Check Inconsistencies in 'Heart Issues' and 'smoker' Columns**
+Q3. **Check Inconsistencies in 'Heart Issues' and 'smoker' Columns**
 
    * * Standardize all values uniformly into clean YES and NO.
 
-4. **Create "Weight Status" Column (BMI Categorization)**
+Q4. **Create "Weight Status" Column (BMI Categorization)**
    *  Created a new calculated column named **`Weight Status`** based on the patient's BMI values using the following thresholds:
      * **Below 18.5:** Underweight
      * **18.5 – 24.9:** Normal Weight
      * **25.0 – 29.9:** Overweight
      * **30.0 and Above:** Obesity
 
-5. **Create "Diabetes Status" Column (HbA1C Categorization)**
+Q5. **Create "Diabetes Status" Column (HbA1C Categorization)**
    * Created a new calculated column named **`Diabetes Status`** categorized according to HbA1C levels:
      * **Below 5.7:** Normal
      * **5.7 – 6.4:** Prediabetes
      * **6.5 and Above:** Diabetes
 
-6. **Merge Date Components (`Hospitalization Details` Table)**
+Q6. **Merge Date Components (`Hospitalization Details` Table)**
    *  Merged the separate `year`, `month`, and `date` columns into a single column named **`Date of Birth`**.
    *  Using the CONCATENATE Function.
    *  Formatted the merged column using the custom date format **`DD-MMM-YYYY`**.
 
-7. **Calculate Customer 'Age'**
+Q7. **Calculate Customer 'Age'**
    *  Calculated the **`Age`** of each customer using their `Date of Birth` relative to the official dataset collection date: **8th June 2023** (`2023-06-08`).
    *  Using DATEDIF Function.
 
-8. **Format 'charges' Column**
+Q8. **Format 'charges' Column**
    *  Formatted the financial **`charges`** column explicitly as currency displaying the dollar sign (**$**).
 
 
@@ -85,11 +88,11 @@ Q2. **Convert "NumberOfMajorSurgeries" (`Medical Examinations` Table)**
 
 To prepare the dataset for comprehensive exploration, analysis, and dashboard visualization, the following consolidation and feature steps were executed:
 
-1. **Master Sheet Creation ("Healthcare")**
+Q1. **Master Sheet Creation ("Healthcare")**
     * Created a new consolidated sheet named **`Healthcare`**.
    *  Combined all three tables into a single unified table using **`Customer ID`** as the common primary key via **`VLOOKUP`**.
 
-2. **Column Retention**
+Q2. **Column Retention**
    *  Retained only the essential fields necessary for downstream insights and dashboard filtering:
      * *Customer Information & Metrics:* **`Customer ID`**, **`First Name`**, **`Age`**, **`Date of Birth`**, **`State ID`**
      * *Health & Clinical Indicators:* **`BMI`**, **`HBA1C`**, **`Heart Issues`**, **`Any Transplants`**, **`Cancer history`**,  **`NumberOfMajorSurgeries`**, **`smoker`**, **`Weight Status`**, **`Diabetes Status`**
